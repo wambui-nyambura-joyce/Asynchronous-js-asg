@@ -1,13 +1,13 @@
 // Question1
 // Write an asynchronous function that accepts a message string and a delay time in milliseconds. 
 // The function should log the message to the console after the specified delay time.
-const logMessageWithDelay = async (message, delay) => {
+const study = async (message, delay) => {
     await new Promise(resolve => setTimeout(resolve, delay));
     console.log(message);
   };
   
-  logMessageWithDelay("Message with 2 second delay", 2000);
-  logMessageWithDelay("Message with no delay"); 
+  study("Message with 2 second delay", 3000);
+  study("Message with no delay"); 
 
 
 // Question2
