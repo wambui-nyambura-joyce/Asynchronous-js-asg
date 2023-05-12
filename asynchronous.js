@@ -13,7 +13,29 @@ const study = async (message, delay) => {
 // Question2
 // You have an array of user IDs and a function getUserData(id) that returns a Promise with user data when given 
 // a user ID. Write an asynchronous function that fetches and logs the data for each user ID one by one, in sequence.
-
+const getUserData = async (id) => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        const userData = { id, name: `User ${id}`, age: Math.floor(Math.random() * 30) + 18 };
+        resolve(userData);
+      }, Math.random() * 2000 + 1000);
+    });
+  };
+  
+  const fetchUserDataInSequence = async (userIds) => {
+    for (const id of userIds) {
+      try {
+        const userData = await getUserData(id);
+        console.log(userData);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+  
+  const userIds = [1, 2, 3, 4, 5];
+  fetchUserDataInSequence(userIds);
+  
 
 
 
